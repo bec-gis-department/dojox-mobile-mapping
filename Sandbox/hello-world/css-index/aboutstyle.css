@@ -1,0 +1,46 @@
+/* Basic Styling */
+body{
+    background-image: url(space2.jpg);
+}
+h1{
+    color:whitesmoke;
+    background-color: #333;
+    text-align: center;
+}
+p{
+    color: whitesmoke;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: large;
+
+}
+img.me{
+    width: 200px;
+    height: 200px;
+    border-style: solid;
+    border-width: thick;
+    border-color: whitesmoke;
+}
+/* Nav Bar example from  https://www.w3schools.com/css/css_navbar.asp*/
+h2 {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+  }
+  
+  li {
+    float: left;
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  li a:hover {
+    background-color: #111;
+  }
