@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maxinum-scale=1.0, user-scalable=0">
+        <script src="https://js.arcgis.com/3.31compact/"></script>
+        <link rel="stylesheet" href="https://js.arcgis.com/3.31/esri/css/esri.css" />
+        <link rel="stylesheet" href= "css/main.css" />
+        <script>
+        require([
+            "esri/map",
+            "dojox/mobile",
+            "dojox/mobile/parser",
+            "esri/sniff",
+            "dojox/mobile/deviceTheme",
+            "dojo/dom",
+            "dijit/registry",
+            "dojo/on",
+            "dojox/mobile/ToolBarButton",
+            "dojox/mobile/View",
+            "dojox/mobile/ContentPane"
+        ]), function (Map, mobile, parser, has, dTheme, dom, registry, on) {
+        parser.parse();
+        mobile.hideAddressBar();
+        }
+        var resizeEvt = (window.onorientationchange !== undefined && !has('android')) ? "orientationchange" : "resize";
+        on(window, resizeEvt, resizeMap);
+        function resizeMap() {
+            mobile.hideAddressBar();
+            adjustMapHeight();
+            map.resize();
+            map.reposition();
+        }
+        function adjustMapHeight() {
+            var availHeight = mobilegetScreenSize().h - registry.byId('header').domNode.clientheight - 1;
+            if (has('iphone') || has('ipod')) {
+                availHeight += iphoneAdjustment();
+            }
+            dom.byId("map").style.height = availHeight + "px";
+        }
+        function iphoneAdjustment() {
+            var sz = mobile.getScreenSize();
+            if (sz.h > sz.w) {
+               // adding address bar height back to map because it has not been hidden yet
+               return screen.availHeight - window.innerHeight- 44;
+            } else { //landscape
+            // react to full screen / bottom button bar visible toggles
+              var _conn = on(window, 'resize', function() {
+                  _conn.remove();
+                  resizeMap();
+              });
+              return 0;  
+            } 
+        }
+        var map = new esri.Map("map", {
+            basemap: "topo",
+            center: [-118.696, 34.111],
+            zoom: 7,
+            slider: false
+        });
+        map.on("load", mapLoadHandler);
+        function mapLoadHandler(evt) {
+            resizeMap();
+            registry.byId('mapView').on('AfterTransitionIn', resizeMap);
+        }
+        </script>
+        <title> First mobile application</title>
+    </head>
+</html>
