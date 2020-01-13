@@ -83,11 +83,13 @@
           return 0;
         }
       }
+      function DD2Function() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
     });
     
-</script>
+  </script>
 </head>
-
 <body>
   <div id="mapView" data-dojo-type="dojox.mobile.View" data-dojo-props="selected: true">
     <div id="header" data-dojo-type="dojox.mobile.Heading" style="text-align:start">
@@ -98,7 +100,12 @@
       <div id="OSButton" data-dojo-type="dojox.mobile.ToolBarButton" style="float: right" moveTo="OutageView">
       Outage Statistics
       </div>
-      
+      <div id="DDButton" data-dojo-type="dojox.mobile.ToolBarButton" style="float: right" onclick="DD2Function()" class="dropbtn">
+        Dropdown 1
+        </div>
+        <div id="DD2Button" data-dojo-type="dojox.mobile.ToolBarButton" style="float: right">
+          Dropdown 2
+          </div>
     </div>
 
     <div id="mapContainer" data-dojo-type="dojox.mobile.ContentPane">
