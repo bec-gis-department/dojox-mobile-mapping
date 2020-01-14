@@ -2,6 +2,7 @@ html, body, .mblView {
   height: 100%;
   margin: 0px;
   width: 100%;
+  position: relative;
 }
 
 /* #mapView {
@@ -13,3 +14,11 @@ html, body, .mblView {
   width:	100%;
   height:	100%;
 }
+body.mapContainer {
+  z-index: 0;
+}
+body.header {
+  position: relative;
+  z-index: 10;
+}
+/* Dropdown 1 */

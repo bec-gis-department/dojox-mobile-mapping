@@ -92,7 +92,7 @@
 </head>
 <body>
   <div id="mapView" data-dojo-type="dojox.mobile.View" data-dojo-props="selected: true">
-    <div id="header" data-dojo-type="dojox.mobile.Heading" style="text-align:start">
+    <div id="header" data-dojo-type="dojox.mobile.Heading" style="text-align:start" class="header">
       Application Title
       <div id="LVButton" data-dojo-type="dojox.mobile.ToolBarButton" style="float: right;" moveTo="LightningView">
         Lightning Viewer
@@ -101,14 +101,27 @@
       Outage Statistics
       </div>
       <div id="DDButton" data-dojo-type="dojox.mobile.ToolBarButton" style="float: right" onclick="DD2Function()" class="dropbtn">
-        Dropdown 1
-        </div>
+        <select data-dojo-id="ss1" name="ss1" data-dojo-type="dojox.form.CheckedMultiSelect">
+          <option value="TN">Tennessee</option>
+          <option value="VA" selected="selected">Virginia</option>
+          <option value="WA">Washington</option>
+          <option value="FL">Florida</option>
+          <option value="CA">California</option>
+    </select>
+       
+      </div>
         <div id="DD2Button" data-dojo-type="dojox.mobile.ToolBarButton" style="float: right">
-          Dropdown 2
+          <select data-dojo-id="ss1" name="ss1" data-dojo-type="dojox.form.CheckedMultiSelect">
+            <option value="TN">Tennessee</option>
+            <option value="VA" selected="selected">Virginia</option>
+            <option value="WA">Washington</option>
+            <option value="FL">Florida</option>
+            <option value="CA">California</option>
+      </select>
           </div>
     </div>
 
-    <div id="mapContainer" data-dojo-type="dojox.mobile.ContentPane">
+    <div id="mapContainer" data-dojo-type="dojox.mobile.ContentPane" class="mapContainer">
       <div id="map"></div>
     </div>
   </div>
@@ -126,3 +139,6 @@
   </div>
 </body>
 </html>
+
+
+
