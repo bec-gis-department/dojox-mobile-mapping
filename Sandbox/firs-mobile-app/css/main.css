@@ -16,5 +16,7 @@ html, body, .mblView {
 }
 #header {
   background-color: #295d75;
-
+}
+#logo {
+  height: 40px;
 }
