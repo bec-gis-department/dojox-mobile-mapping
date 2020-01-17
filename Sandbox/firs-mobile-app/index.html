@@ -31,7 +31,6 @@
     "dojox/mobile/ContentPane",
     "dojox/form/CheckedMultiSelect",
     "dijit/form/ComboBox"
-
   ],
 
     function (Map, mobile, parser, has, dTheme, dom, registry, on) {
@@ -89,27 +88,27 @@
   document.getElementById("myDropdown").classList.toggle("show");
 }
     });
-    
+
   </script>
 </head>
 <body>
   <div id="mapView" data-dojo-type="dojox.mobile.View" data-dojo-props="selected: true">
     <div id="header" data-dojo-type="dojox.mobile.Heading" style="text-align:start" class="header">
-      Application Title
+        Application Title <img src="bluebonnetlogo.png" alt="" id="logo">
       <div id="LVButton" data-dojo-type="dojox.mobile.ToolBarButton" style="float: right;" moveTo="LightningView">
         Lightning Viewer
       </div>
       <div id="OSButton" data-dojo-type="dojox.mobile.ToolBarButton" style="float: right" moveTo="OutageView">
       Outage Statistics
       </div>
-      <div id="DDButton" data-dojo-type="dojox.mobile.ToolBarButton" style="float: right" onclick="DD2Function()" class="dropbtn">
+      <div id="DDButton" data-dojo-type="dojox.mobile.ToolBarButton" style="float: right" class="dropbtn">
         <select data-dojo-id="ss1" name="ss1" data-dojo-type="dojox.form.CheckedMultiSelect" multiple= "true">
           <option value="TN">Option 1</option>
           <option value="VA">Option 2</option>
           <option value="WA">Option 3</option>
           <option value="FL">Option 4</option>
           <option value="CA">option 5</option>
-    </select>
+         </select>
        
       </div>
         <div id="DD2Button" data-dojo-type="dojox.mobile.ToolBarButton" style="float: right">
@@ -141,7 +140,3 @@
   </div>
 </body>
 </html>
-
-
-
-

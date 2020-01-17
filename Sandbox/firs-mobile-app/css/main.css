@@ -21,4 +21,8 @@ body.header {
   position: relative;
   z-index: 10;
 }
-/* Dropdown 1 */
+#logo {
+  background-color: black;
+  height: 41px;
+  margin-left: 1%;
+}
